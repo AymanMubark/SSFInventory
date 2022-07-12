@@ -1,0 +1,95 @@
+﻿@model IEnumerable<SSFInventory.Models.Categories>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CatgNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CatgName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Storeid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CatgDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LockedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LockedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CatgNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CatgName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Storeid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CatgDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LockedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LockedDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
